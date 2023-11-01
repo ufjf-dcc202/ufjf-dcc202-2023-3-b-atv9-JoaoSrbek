@@ -12,18 +12,24 @@
     </main>
 
     <script>
-        let oJoao = {
+        let Joao = {
             tipo: "maçã",
             qtd: 1
         }
         
-        let oMaria = {
+        let Maria = {
             tipo: "maçã",
-            qtd: 2
+            qtd: 2,
+            roubou: function () {
+                Maria.qtd+=Joao.qtd;
+                Joao.qtd--;
+            }
         }
 
-        oMaria.qtd = oMaria.qtd + oJoao.qtd;
-        oJoao.qtd = 0;
+        console.log("Maria tinha ", Maria.qtd, " maçãs\n");
+        console.log("João tinha ", Joao.qtd, " maçãs\n");
+        Maria.roubou();
+        console.log("Maria roubou João e por isso agora tem ", Maria.qtd," maçãs, e o infeliz João tem ", Joao.qtd, "maçãs!");
     </script>
 </body>
 </html>
